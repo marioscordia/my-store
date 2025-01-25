@@ -1,6 +1,6 @@
 package types
 
-import "github.com/marioscordia/my-store/pkg/gen/aggregator_v1"
+import "github.com/marioscordia/mystore/pkg/gen/aggregator_v1"
 
 func FromInvReqToDistance(req *aggregator_v1.AggregateInvoiceRequest) *Distance {
 	return &Distance{
