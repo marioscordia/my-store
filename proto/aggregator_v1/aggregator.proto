@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "github.com/marioscordia/pkg/aggregator_v1";
+
+service AggregatorService {
+	rpc AggregateInvoice(AggregateInvoiceRequest) returns (Empty) ;
+	rpc GetInvoice(GetInvoiceRequest) returns (GetInvoiceResponse);
+}
+
+message AggregateInvoiceRequest {
+	int64 obuID = 1;
+	double value = 2;
+	int64 unix = 3;
+}
+
+message GetInvoiceRequest {
+	int64 obuID = 1;
+}
+
+message GetInvoiceResponse {
+	int64 obuID = 1;
+	double distance = 2;
+	double amount = 3;
+}
+
+message Empty{};
